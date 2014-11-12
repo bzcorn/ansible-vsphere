@@ -1,0 +1,17 @@
+---
+
+- name: Create VMware scripts folder
+  file:
+    name=/opt/vmware
+    owner=root
+    group=root
+    mode=0500
+    state=directory
+
+- name: Copy spacewalk_group_add script
+  template:
+    src=spacewalk_group_add.py.j2
+    dest=/opt/vmware/spacewalk_group_add.py
+    owner=root
+    group=root
+    mode=0500

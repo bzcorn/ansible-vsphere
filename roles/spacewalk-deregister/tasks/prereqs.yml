@@ -1,0 +1,17 @@
+---
+
+- name: Create VMware scripts folder
+  file:
+    name=/opt/vmware
+    owner=root
+    group=root
+    mode=0500
+    state=directory
+
+- name: Copy deregister script
+  template:
+    src=deregister.py.j2
+    dest=/opt/vmware/deregister.py
+    owner=root
+    group=root
+    mode=0500

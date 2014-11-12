@@ -1,0 +1,18 @@
+---
+
+- name: vsphere clone
+  hosts: vsphere
+  user: ansible
+  sudo: yes
+  gather_facts: yes
+  roles:
+    - vsphere-clone
+    - vsphere-start
+    - vsphere-network-static
+    - vsphere-network-hostname
+    - vsphere-network-migrate
+    - vsphere-restart
+    - vsphere-network-get-ip
+    - spacewalk-register
+    - spacewalk-group-add
+    - vsphere-vm-permissions

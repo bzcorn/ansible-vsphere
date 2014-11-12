@@ -1,0 +1,3 @@
+---
+
+- include: vm_network_dhcp.yml tags=vmassigndhcp

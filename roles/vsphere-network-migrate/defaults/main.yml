@@ -1,0 +1,9 @@
+---
+
+vcenter_hostname: ""
+vcenter_username: ""
+vcenter_password: ""
+
+vm_guest_name: ""
+
+vcenter_network: ""

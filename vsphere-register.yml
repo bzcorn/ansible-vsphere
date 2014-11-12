@@ -1,0 +1,52 @@
+---
+
+- name: Registering to Spacewalk
+  hosts: vsphere
+  user: ansible
+  sudo: yes
+  gather_facts: yes
+  roles:
+    - vsphere-network-get-ip
+    - spacewalk-register
+    - spacewalk-group-add
+
+- name: Modify SSHD and VISUDO
+  hosts: vsphere
+  user: ansible
+  sudo: yes
+  gather_facts: yes
+  vars:
+    activedirectory_group: ""
+    team_ansible_key: ""
+  tasks:
+    - name: Modify SSHD config
+      lineinfile:
+        dest=/etc/ssh/sshd_config
+        regexp="^AllowGroups GlobalUnixAdministrators ansible$"
+        state=present
+        line="AllowGroups GlobalUnixAdministrators ansible {{ activedirectory_group }}"
+      delegate_to: "{{ vmware.stdout }}"
+      when: activedirectory_group != ""
+
+    - name: Restart SSHD
+      service:
+        name=sshd
+        state=restarted
+      delegate_to: "{{ vmware.stdout }}"
+
+    - name: Modify SUDOERS
+      lineinfile:
+        dest=/etc/sudoers
+        state=present
+        insertafter="^%GlobalUnixAdministrators"
+        line="%{{ activedirectory_group }} ALL=(ALL)       ALL"
+      delegate_to: "{{ vmware.stdout }}"
+      when: activedirectory_group != ""
+
+    - name: Modify Ansible Public Keys
+      lineinfile:
+        dest=/export/users/ansible/.ssh/authorized_keys
+        insertafter=EOF
+        line="{{ team_ansible_key }}"
+      delegate_to: "{{ vmware.stdout }}"
+      when: team_ansible_key != ""

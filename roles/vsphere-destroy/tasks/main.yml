@@ -1,0 +1,3 @@
+---
+
+- include: vm_destroy.yml tags=vmdestroy

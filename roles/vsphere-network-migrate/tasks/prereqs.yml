@@ -1,0 +1,34 @@
+---
+
+- name: Install pyVmomi
+  pip:
+    name=pyvmomi
+    state=present
+
+- name: Setup Scripts Folder
+  file:
+    path=/opt/vmware/tools
+    owner=root
+    group=root
+    mode=0750
+    state=directory
+
+- name: Copy Migration Script
+  template:
+    src=migrate_network.py.j2
+    dest=/opt/vmware/migrate_network.py
+    owner=root
+    group=root
+    mode=0500
+
+- name: Copy Files
+  copy:
+    src={{ item }}
+    dest=/opt/vmware/tools/{{ item }}
+    owner=root
+    group=root
+    mode=0500
+  with_items:
+    - __init__.py
+    - cli.py
+    - tasks.py

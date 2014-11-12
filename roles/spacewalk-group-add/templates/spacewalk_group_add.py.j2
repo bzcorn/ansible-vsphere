@@ -1,0 +1,20 @@
+#!/usr/bin/python
+from datetime import datetime
+import time
+import xmlrpclib
+
+SPACEWALK_URL = "{{ spacewalk_serverurl }}"
+SPACEWALK_LOGIN = "{{ spacewalk_username }}"
+SPACEWALK_PASSWORD = "{{ spacewalk_password }}"
+
+client = xmlrpclib.Server(SPACEWALK_URL, verbose=0)
+
+key = client.auth.login(SPACEWALK_LOGIN, SPACEWALK_PASSWORD)
+system_Name = "{{ vm_guest_name }}.thoughtworks.com"
+system_Group = "{{ spacewalk_group }}"
+system_Id = client.system.getId(key, system_Name)
+
+add_system_to_group = client.systemgroup.addOrRemoveSystems(key, "elkproduction", [system_Id[0]["id"]], True)
+add_system_to_group = client.systemgroup.addOrRemoveSystems(key, system_Group, [system_Id[0]["id"]], True)
+
+client.auth.logout(key)

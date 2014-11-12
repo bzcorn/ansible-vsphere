@@ -1,0 +1,5 @@
+---
+
+- name: Register VM tp Spacewalk Group
+  command: >
+    python /opt/vmware/spacewalk_group_add.py

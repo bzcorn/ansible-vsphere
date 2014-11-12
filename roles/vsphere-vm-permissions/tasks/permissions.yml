@@ -1,0 +1,35 @@
+---
+
+- name: Modify SSHD config
+  lineinfile:
+    dest=/etc/ssh/sshd_config
+    regexp="^AllowGroups GlobalUnixAdministrators ansible$"
+    state=present
+    line="AllowGroups GlobalUnixAdministrators ansible {{ activedirectory_group }}"
+  delegate_to: "{{ vmware.stdout }}"
+  when: activedirectory_group != ""
+
+- name: Restart SSHD
+  service:
+    name=sshd
+    state=restarted
+  delegate_to: "{{ vmware.stdout }}"
+
+- name: Modify SUDOERS
+  lineinfile:
+    dest=/etc/sudoers
+    state=present
+    insertafter="^%GlobalUnixAdministrators"
+    line="%{{ activedirectory_group }} ALL=(ALL)       ALL"
+  delegate_to: "{{ vmware.stdout }}"
+  when: activedirectory_group != ""
+
+- name: Modify Ansible Public Keys
+  template:
+    src=authorized_keys.j2
+    dest=/export/users/ansible/.ssh/authorized_keys
+    owner=ansible
+    group=root
+    mode=0600
+  delegate_to: "{{ vmware.stdout }}"
+  when: team_ansible_key != ""

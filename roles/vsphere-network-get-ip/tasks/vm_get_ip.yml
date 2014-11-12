@@ -1,0 +1,10 @@
+---
+
+- name: Grab IP from pysphere - Register Variable(vmware)
+  command: >
+    python
+    /opt/vmware/vmgetip.py
+  register: vmware
+  until: vmware.stdout != "None" and "::" not in vmware.stdout
+  retries: 120
+  delay: 15

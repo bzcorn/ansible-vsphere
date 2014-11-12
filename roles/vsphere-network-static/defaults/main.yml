@@ -1,0 +1,11 @@
+---
+
+vcenter_hostname: ""
+vcenter_username: ""
+vcenter_password: ""
+
+vm_guest_name: ""
+
+vm_ip_address: ""
+vm_subnet_mask: ""
+vm_gateway: ""

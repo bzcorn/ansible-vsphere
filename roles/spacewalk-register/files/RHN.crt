@@ -1,0 +1,95 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number:
+            a7:77:15:fa:7c:15:0a:50
+        Signature Algorithm: sha1WithRSAEncryption
+        Issuer: C=US, ST=Illinois, L=Chicago, O=ThoughtWorks, Inc., OU=TechOps, CN=elkspacewalk01.thoughtworks.com
+        Validity
+            Not Before: Sep 12 10:32:09 2013 GMT
+            Not After : Sep  6 10:32:09 2036 GMT
+        Subject: C=US, ST=Illinois, L=Chicago, O=ThoughtWorks, Inc., OU=TechOps, CN=elkspacewalk01.thoughtworks.com
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                Public-Key: (2048 bit)
+                Modulus:
+                    00:e9:d0:d5:8e:7e:fa:bc:6e:d6:f9:76:9f:6f:8c:
+                    bd:1b:51:10:3d:d1:f5:d9:27:ae:bf:c7:db:29:0c:
+                    5f:34:a0:cc:a9:56:76:69:cb:ca:6c:38:93:dd:91:
+                    ee:11:ba:1a:96:d7:59:66:fe:35:26:1a:d4:4f:c2:
+                    ee:50:de:ea:47:17:25:5a:6a:d0:e4:dd:e5:08:da:
+                    1e:f0:d0:d8:bb:00:70:60:58:27:3c:76:27:67:75:
+                    41:04:90:81:c1:11:ee:3d:03:71:59:a8:4e:52:ff:
+                    f8:90:3d:f1:70:98:86:5e:a5:61:2a:b5:1e:ff:98:
+                    b9:5d:e1:3b:ed:1d:43:15:9d:fa:9b:79:5f:ce:31:
+                    60:14:dd:bb:1c:06:f1:f1:54:23:e6:92:b9:ac:d8:
+                    53:34:6a:25:3e:c4:47:df:b3:e1:23:59:a6:18:f0:
+                    b3:45:2a:51:0f:d5:fa:7d:cc:1c:35:57:dd:f0:52:
+                    f8:92:f5:6d:a8:18:98:8c:3b:b0:1a:7c:4e:84:58:
+                    f5:6a:6c:92:ed:12:ba:3c:e9:4a:42:19:01:69:98:
+                    3d:74:ae:a8:3e:8e:7c:1d:46:fc:da:b1:a8:6e:72:
+                    83:43:d1:ab:d3:a9:75:1b:b2:5a:71:63:f9:7d:e3:
+                    78:5f:59:f3:d7:b2:d1:d6:0a:85:90:c9:1b:66:32:
+                    05:fd
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Basic Constraints:
+                CA:TRUE
+            X509v3 Key Usage:
+                Digital Signature, Key Encipherment, Certificate Sign
+            X509v3 Extended Key Usage:
+                TLS Web Server Authentication, TLS Web Client Authentication
+            Netscape Comment:
+                RHN SSL Tool Generated Certificate
+            X509v3 Subject Key Identifier:
+                48:D0:8A:17:FC:B0:C0:B0:69:A4:82:F6:A0:68:B4:D2:B2:E8:CC:59
+            X509v3 Authority Key Identifier:
+                keyid:48:D0:8A:17:FC:B0:C0:B0:69:A4:82:F6:A0:68:B4:D2:B2:E8:CC:59
+                DirName:/C=US/ST=Illinois/L=Chicago/O=ThoughtWorks, Inc./OU=TechOps/CN=elkspacewalk01.thoughtworks.com
+                serial:A7:77:15:FA:7C:15:0A:50
+
+    Signature Algorithm: sha1WithRSAEncryption
+        3b:d2:9e:72:15:d8:47:91:e8:a5:9c:a7:02:82:c5:41:e3:94:
+        f2:0c:d2:64:ce:f2:14:3a:47:e8:02:c3:9d:9c:a8:c2:df:93:
+        7b:2b:80:da:15:6e:fa:1d:42:17:4d:e7:fb:4d:d2:53:b5:32:
+        f1:01:74:4b:77:eb:fd:27:f8:f0:1a:4e:77:94:34:b4:29:5d:
+        7e:e5:97:d8:17:12:2f:90:4b:fb:f4:2b:43:28:ab:7b:95:7b:
+        b9:f1:6f:83:ca:a1:df:4e:8f:69:de:13:35:39:3c:a8:64:ed:
+        de:c0:f8:8f:26:bb:5b:d9:c9:20:19:8b:3c:e2:3b:f4:3e:bf:
+        5a:82:0f:be:e3:5f:66:cc:9f:44:c7:0d:0c:5e:77:5f:db:03:
+        95:0b:39:dc:67:0e:80:52:27:b7:e7:d6:d9:88:8d:55:dc:67:
+        ac:40:17:c4:15:0d:09:53:09:1e:0c:7b:28:68:04:4a:0c:5d:
+        13:87:ff:d8:10:64:35:47:f7:71:c7:cd:da:55:b7:7f:ac:d8:
+        25:0c:58:46:7b:55:54:90:c2:19:11:49:c5:75:32:04:cb:b1:
+        b1:d2:03:0d:4d:d5:e6:38:ab:27:bb:f7:2f:70:1b:68:75:31:
+        a8:b2:49:13:fb:f1:dc:e9:f9:e8:ff:90:3e:6b:a2:06:e2:cd:
+        f9:84:87:02
+-----BEGIN CERTIFICATE-----
+MIIE8DCCA9igAwIBAgIJAKd3Ffp8FQpQMA0GCSqGSIb3DQEBBQUAMIGLMQswCQYD
+VQQGEwJVUzERMA8GA1UECBMISWxsaW5vaXMxEDAOBgNVBAcTB0NoaWNhZ28xGzAZ
+BgNVBAoTElRob3VnaHRXb3JrcywgSW5jLjEQMA4GA1UECxMHVGVjaE9wczEoMCYG
+A1UEAxMfZWxrc3BhY2V3YWxrMDEudGhvdWdodHdvcmtzLmNvbTAeFw0xMzA5MTIx
+MDMyMDlaFw0zNjA5MDYxMDMyMDlaMIGLMQswCQYDVQQGEwJVUzERMA8GA1UECBMI
+SWxsaW5vaXMxEDAOBgNVBAcTB0NoaWNhZ28xGzAZBgNVBAoTElRob3VnaHRXb3Jr
+cywgSW5jLjEQMA4GA1UECxMHVGVjaE9wczEoMCYGA1UEAxMfZWxrc3BhY2V3YWxr
+MDEudGhvdWdodHdvcmtzLmNvbTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoC
+ggEBAOnQ1Y5++rxu1vl2n2+MvRtRED3R9dknrr/H2ykMXzSgzKlWdmnLymw4k92R
+7hG6GpbXWWb+NSYa1E/C7lDe6kcXJVpq0OTd5QjaHvDQ2LsAcGBYJzx2J2d1QQSQ
+gcER7j0DcVmoTlL/+JA98XCYhl6lYSq1Hv+YuV3hO+0dQxWd+pt5X84xYBTduxwG
+8fFUI+aSuazYUzRqJT7ER9+z4SNZphjws0UqUQ/V+n3MHDVX3fBS+JL1bagYmIw7
+sBp8ToRY9Wpsku0SujzpSkIZAWmYPXSuqD6OfB1G/NqxqG5yg0PRq9OpdRuyWnFj
++X3jeF9Z89ey0dYKhZDJG2YyBf0CAwEAAaOCAVMwggFPMAwGA1UdEwQFMAMBAf8w
+CwYDVR0PBAQDAgKkMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjAxBglg
+hkgBhvhCAQ0EJBYiUkhOIFNTTCBUb29sIEdlbmVyYXRlZCBDZXJ0aWZpY2F0ZTAd
+BgNVHQ4EFgQUSNCKF/ywwLBppIL2oGi00rLozFkwgcAGA1UdIwSBuDCBtYAUSNCK
+F/ywwLBppIL2oGi00rLozFmhgZGkgY4wgYsxCzAJBgNVBAYTAlVTMREwDwYDVQQI
+EwhJbGxpbm9pczEQMA4GA1UEBxMHQ2hpY2FnbzEbMBkGA1UEChMSVGhvdWdodFdv
+cmtzLCBJbmMuMRAwDgYDVQQLEwdUZWNoT3BzMSgwJgYDVQQDEx9lbGtzcGFjZXdh
+bGswMS50aG91Z2h0d29ya3MuY29tggkAp3cV+nwVClAwDQYJKoZIhvcNAQEFBQAD
+ggEBADvSnnIV2EeR6KWcpwKCxUHjlPIM0mTO8hQ6R+gCw52cqMLfk3srgNoVbvod
+QhdN5/tN0lO1MvEBdEt36/0n+PAaTneUNLQpXX7ll9gXEi+QS/v0K0Moq3uVe7nx
+b4PKod9Oj2neEzU5PKhk7d7A+I8mu1vZySAZizziO/Q+v1qCD77jX2bMn0THDQxe
+d1/bA5ULOdxnDoBSJ7fn1tmIjVXcZ6xAF8QVDQlTCR4MeyhoBEoMXROH/9gQZDVH
+93HHzdpVt3+s2CUMWEZ7VVSQwhkRScV1MgTLsbHSAw1N1eY4qye79y9wG2h1Maiy
+SRP78dzp+ej/kD5rogbizfmEhwI=
+-----END CERTIFICATE-----

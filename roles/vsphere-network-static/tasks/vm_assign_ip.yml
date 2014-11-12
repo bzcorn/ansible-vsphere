@@ -1,0 +1,39 @@
+---
+
+- name: Get VM Hardware Facts
+  vsphere_guest:
+    vcenter_hostname: "{{ vcenter_hostname }}"
+    username: "{{ vcenter_username }}"
+    password: "{{ vcenter_password }}"
+    guest: "{{ vm_guest_name }}"
+    vmware_guest_facts: yes
+  register: facts
+
+- name: Copy Get IP Script
+  template:
+    src=vmgetip.py
+    dest=/opt/vmware/vmgetip.py
+    owner=root
+    group=root
+    mode=0500
+
+- name: Grab IP from pysphere - Register Variable
+  command: >
+    python
+    /opt/vmware/vmgetip.py
+  register: vmware
+  until: vmware.stdout != "None" and "::" not in vmware.stdout
+  retries: 50
+  delay: 10
+
+- debug:
+    var=vmware
+
+- name: Set IP Script
+  template:
+    src=network.script.j2
+    dest=/etc/sysconfig/network-scripts/ifcfg-eth0
+    owner=root
+    group=root
+    mode=0644
+  delegate_to: "{{ vmware.stdout }}"

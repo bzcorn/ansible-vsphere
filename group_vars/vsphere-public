@@ -1,0 +1,120 @@
+---
+
+# All variables listed here are used within this repo.
+# Descriptions are provided if necessary, along with
+# available options in ELK datacenter
+
+
+### Spacewalk Variables
+
+# These are set by TechOps and teams won't
+# need to update these variables.  They're
+# posted here to show they exist in the repo
+
+spacewalk_hostname: ""
+spacewalk_serverurl: ""
+spacewalk_username: ""
+spacewalk_password: ""
+spacewalk_activation_key: ""
+
+# For registering Guest to Spacewalk -- Allows for
+# users to gain SSH and SUDO access
+
+spacewalk_group: ""
+
+### vCenter Variables
+
+# These are assigned to teams by TechOps and teams won't
+# need to update these variables.  They're
+# posted here for openness
+
+vcenter_username: ""
+vcenter_password: ""
+vcenter_hostname: ""
+vcenter_datacenter: "ELK"
+vcenter_cluster: "ELK-Local"
+
+
+# vcenter_hypervisor can be changed to three options
+# however this is unnecessary as vSphere will auto
+# balance the cluster.  This option is necessary
+# just as a landing point for a Guest VM
+
+vcenter_hypervisor: "elkvmw03.thoughtworks.com"
+
+# This option should be changed based on team
+# However quick spikes can leave this as default
+# Note: This var must lead with /Resources
+#- Resources
+#    Delivery Teams
+#        Beach
+#        CommsCollab
+#        Operational Insights
+#        Peoplesoft
+#        Sales Force
+#        Sales Refresh
+#        Staffing
+#    Development
+#    DMZ
+#    Production
+vcenter_resource_pool: "/Resources/Development"
+
+# These are the local DNS servers in ThoughtWorks
+# Recommend to not change dns1, but changing dns2
+# is allowed
+
+vm_dns1: "10.42.4.5"
+vm_dns2: "10.1.1.5"
+
+# These are default provisioned values for servers
+# Disk size is in GB, RAM in MB, and CPU in quantity
+
+vm_disk_size: "40"
+vm_ram: "2048"
+vm_cpu: "2"
+
+# TechOps will routinely change this value
+# Delivery Teams will be assigned a datastore in the future
+
+vm_datastore: "vmfs07"
+
+# Recommend changing this value to "Production"
+# or to a Delivery Team's assigned network.  At the moment
+# request a static IP from TechOps.  DNS records will
+# require a ticket to techops-support@thoughtworks.com
+# Future revisions to this repo will auto-provision A
+# records
+
+# Available Options
+
+# Network Team Test VLAN = 10.42.30.0/24
+# Production = 10.42.4.0/22
+
+vm_network: "Network Team Test VLAN"
+
+# Do not change - This delcares the network as part of a distributed switch
+vm_network_type: "dvs"
+
+# MUST BE FILLED IN and follows this naming convention
+# https://docs.google.com/a/thoughtworks.com/document/d/1UngVLeHdlckHMVGZh2OHna4JW7rkzdbpHMaTN2weC8A/edit?usp=sharing
+# VM Guests found not following this naming convention are SUBJECT TO IMMEDIATE DESTRUCTION
+
+vm_guest_name: ""
+
+# Any value allowed
+vm_notes: ""
+
+# Request from TechOps for assignment.  Once IP is assigned to team
+# repeated use is allowed without TechOps intervention
+
+vm_ip_address: ""
+vm_subnet_mask: ""
+vm_gateway: ""
+
+# Required for access for SSH and Tower
+# AD groups are requested to TechOps -- Provides SSH/Sudo access
+# Ansible key is a public key for the private
+# key which is hosted on Tower
+
+activedirectory_group: ""
+team_ansible_key: ""

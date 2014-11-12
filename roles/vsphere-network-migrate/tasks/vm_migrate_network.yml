@@ -1,0 +1,5 @@
+---
+
+- name: Migrate Network
+  command: >
+    python /opt/vmware/migrate_network.py

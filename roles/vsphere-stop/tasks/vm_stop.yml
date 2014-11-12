@@ -1,0 +1,20 @@
+---
+
+- name: Install prereqs
+  command:
+    yum install -y python-pip
+
+- name: Install python modules
+  pip:
+    name={{ item }}
+    state=present
+  with_items:
+    - pysphere
+
+- name: Poweroff VM
+  vsphere_guest:
+    vcenter_hostname: "{{ vcenter_hostname }}"
+    username: "{{ vcenter_username }}"
+    password: "{{ vcenter_password }}"
+    guest: "{{ vm_guest_name }}"
+    state: powered_off

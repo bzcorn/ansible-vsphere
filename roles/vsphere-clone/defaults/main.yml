@@ -1,0 +1,19 @@
+---
+
+vcenter_hostname: ""
+vcenter_datacenter: ""
+vcenter_hypervisor: ""
+vcenter_resource_pool: ""
+vcenter_cluster: ""
+
+vm_disk_size: ""
+vm_datastore: ""
+vm_ram: ""
+vm_cpu: ""
+vm_network: ""
+vm_network_type: ""
+vm_guest_name: ""
+vm_notes: ""
+vm_gateway: ""
+vm_dns1: ""
+vm_dns2: ""

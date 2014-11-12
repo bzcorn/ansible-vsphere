@@ -1,0 +1,22 @@
+---
+
+vcenter_hostname: "elkvctr04.corporate.thoughtworks.com"
+vcenter_datacenter: "ELK"
+vcenter_hypervisor: "elkvmw03.thoughtworks.com"
+vcenter_resource_pool: "/Resources/Jigsaw"
+vcenter_cluster: "ELK-Local"
+
+vm_disk_size: "40"
+vm_datastore: "vmfs07"
+vm_ram: "2048"
+vm_cpu: "2"
+vm_network: "Network Team Test VLAN"
+vm_network_type: "dvs"
+vm_guest_name: ""
+vm_notes: ""
+vm_ip_address: ""
+vm_subnet_mask: ""
+vm_gateway: "10.42.30.254"
+vm_dns1: "10.42.4.5"
+vm_dns2: "10.1.1.5"
+

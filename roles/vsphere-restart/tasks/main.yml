@@ -1,0 +1,3 @@
+---
+
+- include: vm_restart.yml tags=vmrestart

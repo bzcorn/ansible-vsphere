@@ -1,0 +1,3 @@
+---
+
+- include: vm_assign_ip.yml tags=vmassignip

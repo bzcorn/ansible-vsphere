@@ -1,0 +1,28 @@
+---
+
+- name: Install prereqs
+  command:
+    yum install -y libselinux-python python-pip
+
+- name: Install python modules
+  pip:
+    name={{ item }}
+    state=present
+  with_items:
+    - pysphere
+
+- name: Create Scripts Directory
+  file:
+    path=/opt/vmware
+    owner=root
+    group=root
+    mode=0400
+    state=directory
+
+- name: Copy Get IP Script
+  template:
+    src=vmgetip.py
+    dest=/opt/vmware/vmgetip.py
+    owner=root
+    group=root
+    mode=0500

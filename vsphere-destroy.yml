@@ -1,0 +1,10 @@
+---
+
+- name: vsphere destroy
+  hosts: vsphere
+  user: ansible
+  sudo: yes
+  gather_facts: yes
+  roles:
+    - vsphere-destroy
+    - spacewalk-deregister

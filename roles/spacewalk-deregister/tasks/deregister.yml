@@ -1,0 +1,5 @@
+---
+
+- name: Deregister VM from Spacewalk
+  command: >
+    python /opt/vmware/deregister.py

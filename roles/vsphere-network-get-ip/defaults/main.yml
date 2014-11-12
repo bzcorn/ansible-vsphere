@@ -1,0 +1,5 @@
+---
+
+vcenter_hostname: "elkvctr04.corporate.thoughtworks.com"
+
+vm_guest_name: ""

@@ -1,0 +1,29 @@
+---
+
+- name: Install prereqs
+  command:
+    yum install -y libselinux-python python-pip
+
+- name: Install python modules
+  pip:
+    name={{ item }}
+    state=present
+  with_items:
+    - pysphere
+    - argparse
+
+- name: Create Scripts Directory
+  file:
+    path=/opt/vmware
+    owner=root
+    group=root
+    mode=0400
+    state=directory
+
+- name: Copy Clone Script
+  copy:
+    src=vmclone.py
+    dest=/opt/vmware/vmclone.py
+    owner=root
+    group=root
+    mode=0500

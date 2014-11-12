@@ -1,0 +1,36 @@
+---
+
+- name: Cloning Secure Image
+  command:
+    /opt/vmware/vmclone.py
+    -n "{{ vm_guest_name }}"
+    -s nightly
+    -r "{{ vcenter_resource_pool }}"
+    -d "{{ vm_datastore }}"
+
+- name: Reconfigure VM Hardware
+  vsphere_guest:
+    vcenter_hostname: "{{ vcenter_hostname }}"
+    username: "{{ vcenter_username }}"
+    password: "{{ vcenter_password }}"
+    guest: "{{ vm_guest_name }}"
+    state: reconfigured
+    esxi:
+      datacenter: "{{ vcenter_datacenter }}"
+      hostname: "{{ vcenter_hypervisor }}"
+    resource_pool: "{{ vcenter_resource_pool }}"
+    cluster: "{{ vcenter_cluster }}"
+    vm_extra_config:
+      vcpu.hotadd: yes
+      mem.hotadd:  yes
+      notes: "{{ vm_notes }}"
+    vm_disk:
+      disk1:
+        size_gb: "{{ vm_disk_size }}"
+        type: thin
+        datastore: "{{ vm_datastore }}"
+    vm_hardware:
+      memory_mb: "{{ vm_ram }}"
+      num_cpus: "{{ vm_cpu }}"
+      osid: centos64Guest
+      scsi: paravirtual

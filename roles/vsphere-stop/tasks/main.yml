@@ -1,0 +1,3 @@
+---
+
+- include: vm_stop.yml tags=vmstop

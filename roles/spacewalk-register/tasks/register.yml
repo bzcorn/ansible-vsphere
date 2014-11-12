@@ -1,0 +1,20 @@
+---
+
+- name: Copy Spacewalk Cert
+  copy:
+    src=RHN.crt
+    dest=/usr/share/rhn/RHN-ORG-TRUSTED-SSL-CERT
+    owner=root
+    group=root
+    mode=0644
+  delegate_to: "{{ vmware.stdout }}"
+
+- name: Re-register with Spacewalk
+  command:
+    rhnreg_ks
+    --serverUrl=https://{{ spacewalk_hostname }}/XMLRPC
+    --sslCACert=/usr/share/rhn/RHN-ORG-TRUSTED-SSL-CERT
+    --activationkey={{ spacewalk_activation_key }}
+    --force
+  ignore_errors: yes
+  delegate_to: "{{ vmware.stdout }}"

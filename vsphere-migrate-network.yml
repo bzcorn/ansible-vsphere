@@ -1,0 +1,10 @@
+---
+
+- name: vsphere migrate network
+  hosts: vsphere
+  user: ansible
+  sudo: yes
+  gather_facts: yes
+  roles:
+    - vsphere-network-static
+    - vsphere-network-migrate
