@@ -109,7 +109,8 @@ def main():
 
 # Start program
 vCenterServer = pysphere.VIServer()
-vCenterServer.connect('elkvctr04.corporate.thoughtworks.com', 'vsphere.local\\devteam', '@mdceYi3UGiptM$!GHqS')
+# Place in connection strings directly
+vCenterServer.connect('', '', '')
 
 if __name__ == "__main__":
     main()
